@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('order_id')->constrained('orders')->onDelete('cascade');
             $table->enum('type', ['billing', 'shipping']);
-            $table->string('first-name');
-            $table->string('last-name');
+            $table->string('first_name');
+            $table->string('last_name');
             $table->string('email')->nullable();
             $table->string('phone_number');
             $table->string('street_address');

@@ -19,7 +19,7 @@ class CheckoutController extends Controller
         if($cart->get()->count() == 0) {
             return redirect()->route('home');
         }
-        
+
         return view('front.checkout', [
             'cart' => $cart,
             'countries' => Countries::getNames(),
@@ -65,5 +65,7 @@ class CheckoutController extends Controller
                 DB::rollBack();
                 throw $e;
             }
+
+        return redirect()->route('home');
     }
 }
